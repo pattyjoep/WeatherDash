@@ -1,0 +1,13 @@
+.search-bar{
+    width: 70%;
+    float: left;
+}
+
+.dash-board {
+    float:left
+}
+
+.left-sidebar-card {
+    float:left; 
+    background-color: #efefef
+}
