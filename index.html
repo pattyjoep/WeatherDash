@@ -25,27 +25,78 @@
     <div class="card w-25 left-sidebar-card">
         <div class="card-body">
             <div id="search">
+                <h4>Search a City</h4>
                 <input id="searchBar" class="form-control mr-sm-2 search-bar" type="text" placeholder="Search">
                 <button id="submitBtn" class="btn btn-outline-primary my-2 my-sm-0">Search</button> <!-- <i class="fas fa-search-location"></i> -->
             </div>
-            <span id="history"></span>
+            <ul id="historyGroup" class="list-group list-group-flush history-btns-list">
+                <!-- History Buttons-->
+            </ul>
         </div>
     </div>
     </div>
-    <div id="dashBoard" class="continer dash-board"></div>
-      
-
-         
-
-    
+    <div id="dashBoard" class="continer dash-board">
+            <h3 id="city-name" class="city-name"></h3> <h3 id="todayDate" class="today-date"></h3>
+            
+        <br>
+        <br>
+            <span id="icon"></span>
+            <p id="temp" class="temp"></p>
+            <p id="humidity"></p>
+            <p id="wind-speed"></p>
+            <p id="UV-index"></p>
+        <br>
+        <div id="container weeklyForecastDiv">
+            <h3 id="weeklyForecastHeader"></h3>
+            <div class="row">
+                <div class="col-md-2 weekly-forecast-item" id="weeklyForecastItemOne">
+                    <h5 id="dateOne"></h5>
+                    <span id="iconOne"></span>
+                    <p id="tempOne" class="temp"></p>
+                    <p id="humidityOne"></p>
+                </div>
+                <div class="col-md-2 weekly-forecast-item" id="weeklyForecastItemTwo">
+                    <h5 id="dateTwo"></h5>
+                    <span id="iconTwo"></span>
+                    <p id="tempTwo" class="temp"></p>
+                    <p id="humidityTwo"></p>
+                </div>
+                <div class="col-md-2 weekly-forecast-item" id="weeklyForecastItemThree">
+                    <h5 id="dateThree"></h5>
+                    <span id="iconThree"></span>
+                    <p id="tempThree" class="temp"></p>
+                    <p id="humidityThree"></p>
+                </div>
+                <div class="col-md-2 weekly-forecast-item" id="weeklyForecastItemFour">
+                    <h5 id="dateFour"></h5>
+                    <span id="iconFour"></span>
+                    <p id="tempFour" class="temp"></p>
+                    <p id="humidityFour"></p>
+                </div>
+                <div class="col-md-2 weekly-forecast-item" id="weeklyForecastItemFive">
+                    <h5 id="dateFive"></h5>
+                    <span id="iconFive"></span>
+                    <p id="tempFive" class="temp"></p>
+                    <p id="humidityFive"></p>
+                </div>
+            </div>
+        </div>
+    </div> 
 </body>
 
 
-
+<!-- Bootstrap JS / JQUERY-->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
+<!-- JQUERY CDN-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Moment JS-->
+<script src="javascript\moment.js"></script>
+
+<!-- Custom JS-->
 <script src="javascript\index_scripts.js"></script>
 
 

@@ -4,10 +4,42 @@
 }
 
 .dash-board {
-    float:left
+    float:left;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 70%;
 }
 
 .left-sidebar-card {
     float:left; 
+    margin-top: 20px;
     background-color: #efefef
+}
+
+.city-name {
+    float: left;
+}
+
+.today-date {
+    float: right;
+}
+
+.weather-div {
+    margin-top: 50px;
+}
+
+.temp {
+    margin-top: 40px;
+}
+
+.history-btn {
+    margin-top: 20px;
+}
+
+.weekly-forecast-item {
+    box-shadow: 1px 1px 3px 1px black;
+    margin-left: 15px;
+    background-color: blue;
+    color: white;
+    padding: 5px;
 }
