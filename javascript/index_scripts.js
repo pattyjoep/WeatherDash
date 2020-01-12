@@ -116,34 +116,32 @@
                         var Day4imgSrc = "https://openweathermap.org/img/wn/" + Day4Img + ".png";
                         var Day4iconImg = $("<img>").attr("src", Day4imgSrc);
 
-
                         var Day5Img = response.list[38].weather[0].icon;
                         var Day5imgSrc = "https://openweathermap.org/img/wn/" + Day5Img + ".png";
                         var Day5iconImg = $("<img>").attr("src", Day5imgSrc);
-                    
-                        $("#dateOne").text(moment().add(1, "days").format("l"));
-                        $("#dateTwo").text(moment().add(2, "days").format("l"));
-                        $("#dateThree").text(moment().add(3, "days").format("l"));
-                        $("#dateFour").text(moment().add(4, "days").format("l"));
-                        $("#dateFive").text(moment().add(5, "days").format("l"));
 
-                        
+
+                        $("#dateOne").text(moment().add(1, "days").format("l"));
                         $("#iconOne").html(Day1iconImg);
                         $("#tempOne").text("Temp: " + response.list[6].main.temp + " °F");
                         $("#humidityOne").text("Humidity: " + response.list[6].main.humidity + "%");
 
+                        $("#dateTwo").text(moment().add(2, "days").format("l"));
                         $("#iconTwo").html(Day2iconImg);
                         $("#tempTwo").text("Temp: " + response.list[14].main.temp + " °F");
                         $("#humidityTwo").text("Humidity: " + response.list[14].main.humidity + "%");
 
+                        $("#dateThree").text(moment().add(3, "days").format("l"));
                         $("#iconThree").html(Day3iconImg);
                         $("#tempThree").text("Temp: " + response.list[22].main.temp + " °F");
                         $("#humidityThree").text("Humidity: " + response.list[22].main.humidity + "%");
 
+                        $("#dateFour").text(moment().add(4, "days").format("l"));
                         $("#iconFour").html(Day4iconImg);
                         $("#tempFour").text("Temp: " + response.list[30].main.temp + " °F");
                         $("#humidityFour").text("Humidity: " + response.list[30].main.humidity + "%");
 
+                        $("#dateFive").text(moment().add(5, "days").format("l"));
                         $("#iconFive").html(Day5iconImg);
                         $("#tempFive").text("Temp: " + response.list[38].main.temp + " °F");
                         $("#humidityFive").text("Humidity: " + response.list[38].main.humidity + "%");
