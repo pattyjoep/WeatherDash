@@ -78,7 +78,7 @@
           // UV Call
             var UVAPICall = function(){
 
-                var queryURLUV = "http://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + response.coord.lat + "&lon=" + response.coord.lon
+                var queryURLUV = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + response.coord.lat + "&lon=" + response.coord.lon
 
                 $.ajax({
                     url:queryURLUV,
