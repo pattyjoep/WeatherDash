@@ -9,15 +9,15 @@
 
     $(document).on("click", ".history-btn", function(){
         var HistoryBtn = $(this).text()
+        var weatherColumn = $("#weatherColumn");
         WeatherAPIQuery(HistoryBtn)
+        weatherColumn.removeClass("hide");
     });
 
 // Set Local Storage Item
     function SetLocalStorage() {
         TypedValue = $("#searchBar").val().trim();
-
         CityHistoryArray.push(TypedValue);
-
         localStorage.setItem("CityHistoryArray", JSON.stringify(CityHistoryArray));
     }
 
@@ -27,7 +27,7 @@
         for (var i = 0; i < CityHistoryArray.length; i++) {
 
             var History = $("#historyGroup");
-            var cityBtn = $("<button>");
+            var cityBtn = $("<button class='btn btn-info'>");
             
             cityBtn.addClass("history-btn")
             cityBtn.text(CityHistoryArray[i]);
@@ -39,12 +39,12 @@
 // Event Listeners
     SubmitBtn.click(function(event) {
         event.preventDefault();
-        
-        var TypedValue = $("#searchBar").val()
-        
+        var TypedValue = $("#searchBar").val();
+        var weatherColumn = $("#weatherColumn");
         WeatherAPIQuery(TypedValue);
         SetLocalStorage();
         GetLocalStorage();
+        weatherColumn.removeClass("hide");
         
     });
 
@@ -53,7 +53,7 @@
 // Weather API Query
     var WeatherAPIQuery = function(location) {
 
-        var APIKey = "59068c5fe12d987eb3614ae68a11fda8"
+        var APIKey = "6c2ebaefc101b100aa11166901010dd8"
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + location + "&units=imperial" + "&apikey=" + APIKey;
         
         $.ajax({
@@ -68,10 +68,10 @@
 
           $("#icon").html(iconImg)
           $("#city-name").text(response.name + ", " + response.sys.country);
-          $("#todayDate").text(moment().format('l'));
-          $("#temp").text("Temperature (°F): " + response.main.temp);
-          $("#humidity").text("Humidity (%): " + response.main.humidity);
-          $("#wind-speed").text("Wind-Speed (mph): " + response.wind.speed);
+          $("#todayDate").text(moment().format('dddd, MMMM Do, YYYY'));
+          $("#temp").html("<i class='fa-solid fa-temperature-half'></i> " + "Temperature: " + response.main.temp + "°F");
+          $("#humidity").html("<i class='fa-solid fa-droplet'></i> " + "Humidity: " + response.main.humidity + "%");
+          $("#wind-speed").html("<i class='fa-solid fa-wind'></i> " + "Wind-Speed: " + response.wind.speed + " mph");
           $("#weeklyForecastHeader").text("5 Day Forecast:")
        
 
@@ -84,7 +84,7 @@
                     url:queryURLUV,
                     method:"GET"
                   }).then(function(response) {
-                    $("#UV-index").text("UV Index: " + response.value);
+                    $("#UV-index").html("<i class='fa-solid fa-sun'></i> " + "UV Index: " + response.value);
                   })
 
             }
@@ -121,30 +121,30 @@
                         var Day5iconImg = $("<img>").attr("src", Day5imgSrc);
 
 
-                        $("#dateOne").text(moment().add(1, "days").format("l"));
+                        $("#dateOne").text(moment().add(1, "days").format("dddd, MMMM Do"));
                         $("#iconOne").html(Day1iconImg);
-                        $("#tempOne").text("Temp: " + response.list[6].main.temp + " °F");
-                        $("#humidityOne").text("Humidity: " + response.list[6].main.humidity + "%");
+                        $("#tempOne").html("<i class='fa-solid fa-temperature-half'></i> " + "Temp: " + response.list[6].main.temp + "°F");
+                        $("#humidityOne").html("<i class='fa-solid fa-droplet'></i> " + "Humidity: " + response.list[6].main.humidity + "%");
 
-                        $("#dateTwo").text(moment().add(2, "days").format("l"));
+                        $("#dateTwo").text(moment().add(2, "days").format("dddd, MMMM Do"));
                         $("#iconTwo").html(Day2iconImg);
-                        $("#tempTwo").text("Temp: " + response.list[14].main.temp + " °F");
-                        $("#humidityTwo").text("Humidity: " + response.list[14].main.humidity + "%");
+                        $("#tempTwo").html("<i class='fa-solid fa-temperature-half'></i> " + "Temp: " + response.list[14].main.temp + "°F");
+                        $("#humidityTwo").html("<i class='fa-solid fa-droplet'></i> " + "Humidity: " + response.list[14].main.humidity + "%");
 
-                        $("#dateThree").text(moment().add(3, "days").format("l"));
+                        $("#dateThree").text(moment().add(3, "days").format("dddd, MMMM Do"));
                         $("#iconThree").html(Day3iconImg);
-                        $("#tempThree").text("Temp: " + response.list[22].main.temp + " °F");
-                        $("#humidityThree").text("Humidity: " + response.list[22].main.humidity + "%");
+                        $("#tempThree").html("<i class='fa-solid fa-temperature-half'></i> " + "Temp: " + response.list[22].main.temp + "°F");
+                        $("#humidityThree").html("<i class='fa-solid fa-droplet'></i> " + "Humidity: " + response.list[22].main.humidity + "%");
 
-                        $("#dateFour").text(moment().add(4, "days").format("l"));
+                        $("#dateFour").text(moment().add(4, "days").format("dddd, MMMM Do"));
                         $("#iconFour").html(Day4iconImg);
-                        $("#tempFour").text("Temp: " + response.list[30].main.temp + " °F");
-                        $("#humidityFour").text("Humidity: " + response.list[30].main.humidity + "%");
+                        $("#tempFour").html("<i class='fa-solid fa-temperature-half'></i> " + "Temp: " + response.list[30].main.temp + "°F");
+                        $("#humidityFour").html("<i class='fa-solid fa-droplet'></i> " + "Humidity: " + response.list[30].main.humidity + "%");
 
-                        $("#dateFive").text(moment().add(5, "days").format("l"));
+                        $("#dateFive").text(moment().add(5, "days").format("dddd, MMMM Do"));
                         $("#iconFive").html(Day5iconImg);
-                        $("#tempFive").text("Temp: " + response.list[38].main.temp + " °F");
-                        $("#humidityFive").text("Humidity: " + response.list[38].main.humidity + "%");
+                        $("#tempFive").html("<i class='fa-solid fa-temperature-half'></i> " + "Temp: " + response.list[38].main.temp + "°F");
+                        $("#humidityFive").html("<i class='fa-solid fa-droplet'></i> " + "Humidity: " + response.list[38].main.humidity + "%");
 
                     
                     })

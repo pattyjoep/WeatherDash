@@ -1,18 +1,8 @@
 .search-bar{
-    width: 70%;
-    float: left;
-}
-
-.dash-board {
-    float:left;
-    margin-top: 20px;
-    margin-left: 20px;
-    width: 70%;
+    width: 75%;
 }
 
 .left-sidebar-card {
-    float:left; 
-    margin-top: 20px;
     background-color: #efefef
 }
 
@@ -37,9 +27,11 @@
 }
 
 .weekly-forecast-item {
-    box-shadow: 1px 1px 3px 1px black;
-    margin-left: 15px;
-    background-color: blue;
-    color: white;
-    padding: 5px;
+    background-color: #18a2b8;
+    color: #fff;
+    padding: 10px;
+}
+
+.hide {
+    display: none;
 }

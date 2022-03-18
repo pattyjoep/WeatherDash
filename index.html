@@ -19,71 +19,87 @@
     <header>
         <nav class="navbar navbar-dark bg-dark">
             <span class="navbar-brand mb-0 h1">Weather Dashboard</span>
+            <input id="searchBar" class="form-control mr-sm-2 search-bar" type="text" placeholder="Search a City Name">
+            <button id="submitBtn" class="btn btn-info">Search</button> 
         </nav> 
     </header>
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-12 col-lg-3">
+                <div class="card left-sidebar-card">
+                    <div class="card-body">
+                        History
+                        <ul id="historyGroup" class="list-group list-group-flush history-btns-list">
+                            <!-- History Buttons-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="weatherColumn" class="col-12 col-lg-9 hide p-1">
+                <div id="dashBoard" class="container dash-board">
+                    <h3 id="city-name" class="city-name"></h3> 
+                    <h3 id="todayDate" class="today-date"></h3> 
+                <br>
+                <br>
+                    <span id="icon"></span>
+                    <p id="temp" class="temp"></p>
+                    <p id="humidity"></p>
+                    <p id="wind-speed"></p>
+                    <p id="UV-index"></p>
+                <br>
+                <div id="weeklyForecastDiv" class="container-fluid">
+                    <h3 id="weeklyForecastHeader"></h3>
+                    <div class="row">
+                        <div class="col-12 col-lg-4 mt-3">
+                            <div id="weeklyForecastItemOne" class="card weekly-forecast-item">
+                                <h5 id="dateOne"></h5>
+                                <span id="iconOne"></span>
+                                <p id="tempOne" class="temp"></p>
+                                <p id="humidityOne"></p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 mt-3">
+                            <div id="weeklyForecastItemTwo" class="card weekly-forecast-item">
+                                <h5 id="dateTwo"></h5>
+                                <span id="iconTwo"></span>
+                                <p id="tempTwo" class="temp"></p>
+                                <p id="humidityTwo"></p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 mt-3">
+                            <div id="weeklyForecastItemThree" class="card weekly-forecast-item">
+                                <h5 id="dateThree"></h5>
+                                <span id="iconThree"></span>
+                                <p id="tempThree" class="temp"></p>
+                                <p id="humidityThree"></p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 mt-3">
+                            <div id="weeklyForecastItemFour" class="card weekly-forecast-item">
+                                <h5 id="dateFour"></h5>
+                                <span id="iconFour"></span>
+                                <p id="tempFour" class="temp"></p>
+                                <p id="humidityFour"></p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 mt-3">
+                            <div id="weeklyForecastItemFive" class="card weekly-forecast-item">
+                                <h5 id="dateFive"></h5>
+                                <span id="iconFive"></span>
+                                <p id="tempFive" class="temp"></p>
+                                <p id="humidityFive"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div class="card w-25 left-sidebar-card">
-        <div class="card-body">
-            <div id="search">
-                <h4>Search a City</h4>
-                <input id="searchBar" class="form-control mr-sm-2 search-bar" type="text" placeholder="Search">
-                <button id="submitBtn" class="btn btn-outline-primary my-2 my-sm-0">Search</button> <!-- <i class="fas fa-search-location"></i> -->
-            </div>
-            <ul id="historyGroup" class="list-group list-group-flush history-btns-list">
-                <!-- History Buttons-->
-            </ul>
-        </div>
-    </div>
-    </div>
-    <div id="dashBoard" class="continer dash-board">
-            <h3 id="city-name" class="city-name"></h3> <h3 id="todayDate" class="today-date"></h3>
-            
-        <br>
-        <br>
-            <span id="icon"></span>
-            <p id="temp" class="temp"></p>
-            <p id="humidity"></p>
-            <p id="wind-speed"></p>
-            <p id="UV-index"></p>
-        <br>
-        <div id="container weeklyForecastDiv">
-            <h3 id="weeklyForecastHeader"></h3>
-            <div class="row">
-                <div class="col-md-2 weekly-forecast-item" id="weeklyForecastItemOne">
-                    <h5 id="dateOne"></h5>
-                    <span id="iconOne"></span>
-                    <p id="tempOne" class="temp"></p>
-                    <p id="humidityOne"></p>
-                </div>
-                <div class="col-md-2 weekly-forecast-item" id="weeklyForecastItemTwo">
-                    <h5 id="dateTwo"></h5>
-                    <span id="iconTwo"></span>
-                    <p id="tempTwo" class="temp"></p>
-                    <p id="humidityTwo"></p>
-                </div>
-                <div class="col-md-2 weekly-forecast-item" id="weeklyForecastItemThree">
-                    <h5 id="dateThree"></h5>
-                    <span id="iconThree"></span>
-                    <p id="tempThree" class="temp"></p>
-                    <p id="humidityThree"></p>
-                </div>
-                <div class="col-md-2 weekly-forecast-item" id="weeklyForecastItemFour">
-                    <h5 id="dateFour"></h5>
-                    <span id="iconFour"></span>
-                    <p id="tempFour" class="temp"></p>
-                    <p id="humidityFour"></p>
-                </div>
-                <div class="col-md-2 weekly-forecast-item" id="weeklyForecastItemFive">
-                    <h5 id="dateFive"></h5>
-                    <span id="iconFive"></span>
-                    <p id="tempFive" class="temp"></p>
-                    <p id="humidityFive"></p>
-                </div>
-            </div>
-        </div>
-    </div> 
+  
 </body>
-
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/3010feff07.js" crossorigin="anonymous"></script>
 
 <!-- Bootstrap JS / JQUERY-->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
